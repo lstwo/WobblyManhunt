@@ -204,6 +204,12 @@ namespace WobblyManhunt
 
         public static void StartGame()
         {
+            if(currentGame.hasStarted)
+            {
+                ChatLogManager.Instance.ServerSendLogMessage("<b> GAME ALREADY STARTED </b>", Color.red);
+                return;
+            }
+
             ChatLogManager.Instance.ServerSendLogMessage("<b> STARTING GAME </b>", Color.green);
             currentGame.hasStarted = true;
             Instance.StartCoroutine(PlayerWinCoroutine());
@@ -237,6 +243,7 @@ namespace WobblyManhunt
             ChatLogManager.Instance.ServerSendLogMessage("<b> STOPPING GAME </b>", new Color(1, .5f, .5f));
             Instance.StopCoroutine(PlayerWinCoroutine());
             UnlockRespawning();
+            UninitializeManhuntGame();
         }
 
         private static IEnumerator PlayerWinCoroutine()

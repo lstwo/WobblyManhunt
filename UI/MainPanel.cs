@@ -109,8 +109,17 @@ namespace WobblyManhunt.UI
         public void _SetActive()
         {
             controller = PlayerUtils.GetMyPlayer();
+            bool b;
 
-            bool b = controller.networkObject.GetNetworkID() == PlayerUtils.GetHostPlayer().networkObject.GetNetworkID();
+            try
+            {
+                b = controller.networkObject.GetNetworkID() == PlayerUtils.GetHostPlayer().networkObject.GetNetworkID();
+            } 
+            catch
+            {
+                b = false;
+            }
+
             foreach (GameObject obj in hostOptions)
             {
                 obj.SetActive(b);

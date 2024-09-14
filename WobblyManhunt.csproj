@@ -15,7 +15,7 @@
     <PackageReference Include="BepInEx.PluginInfoProps" Version="1.*" />
     <PackageReference Include="rainbowblood.UniverseLib.Mono" Version="2.0.0" />
     <PackageReference Include="UnityEngine.Modules" Version="2020.3.44" IncludeAssets="compile" />
-    <PackageReference Include="WobblyLife.GameLibs" Version="0.9.4.1" />
+    <PackageReference Include="WobblyLife.GameLibs" Version="0.9.5.1" />
 	  <Reference Include="ShadowLib">
 		  <HintPatch>libs/ShadowLib.dll</HintPatch>
 	  </Reference>
