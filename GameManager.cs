@@ -11,7 +11,7 @@ using UnityEngine;
 
 namespace WobblyManhunt
 {
-    public class GameManager : ShadowNetworkBehaviour
+    public class GameManager : ShadowNetworkSingleton
     {
         private byte RPC_UPDATE_PLAYER_TYPE;
         private byte RPC_UPDATE_PLAYER_READY;

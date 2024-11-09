@@ -45,10 +45,6 @@ namespace WobblyManhunt
 
             SceneManager.sceneLoaded += OnSceneLoaded;
 
-            GameObject obj = new GameObject("WobblyManhunt_GameManager");
-            obj.transform.parent = transform; 
-            GameManager = obj.AddComponent<GameManager>();
-
             UniverseLibConfig config = new()
             {
                 Force_Unlock_Mouse = true
@@ -95,11 +91,11 @@ namespace WobblyManhunt
 
         private static void OnSceneLoaded(Scene scene, LoadSceneMode loadMode)
         {
-            if(loadMode == LoadSceneMode.Single && scene.name == "WobblyIsland")
+            if (loadMode == LoadSceneMode.Single && scene.name == "WobblyIsland")
             {
-                Debug.Log("asd");
                 InitializeManhuntGame();
-            } else if(loadMode == LoadSceneMode.Single)
+            } 
+            else if(loadMode == LoadSceneMode.Single)
             {
                 UninitializeManhuntGame();
             }
@@ -142,7 +138,6 @@ namespace WobblyManhunt
 
         public static void SetClientPlayerReady(PlayerController controller, bool ready)
         {
-
             if (currentGame.playerReady.ContainsKey(controller))
             {
                 currentGame.playerReady[controller] = ready;
